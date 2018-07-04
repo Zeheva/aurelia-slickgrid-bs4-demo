@@ -1,0 +1,50 @@
+<template>
+  <h2>${title}</h2>
+  <div class="subtitle" innerhtml.bind="subTitle"></div>
+
+  <div class="col-sm-4">
+    <label>autoEdit setting</label>
+    <br/>
+    <span id="radioAutoEdit">
+      <label class="radio-inline control-label" for="radioTrue">
+        <input type="radio" name="inlineRadioOptions" id="radioTrue" checked value.bind="isAutoEdit" click.delegate="setAutoEdit(true)"> ON (single-click)
+      </label>
+      <label class="radio-inline control-label" for="radioFalse">
+        <input type="radio" name="inlineRadioOptions" id="radioFalse" value.bind="isAutoEdit" click.delegate="setAutoEdit(false)"> OFF (double-click)
+      </label>
+      <button class="btn btn-outline-secondary btn-sm" click.delegate="switchLanguage()">
+        <i class="fa fa-language"></i>
+        Switch Language
+      </button>
+      <span>
+        <button class="btn btn-outline-secondary btn-sm" click.delegate="undo()">
+          <i class="fa fa-undo"></i>
+          Undo last edit(s)
+        </button>
+      </span>
+      <strong>Locale</strong>: ${selectedLanguage + '.json'}
+    </span>
+  </div>
+
+  <div class="col-sm-8">
+    <div class="alert alert-info" show.bind="updatedObject">
+      <strong>Updated Item:</strong> ${updatedObject | stringify}
+    </div>
+    <div class="alert alert-warning" show.bind="alertWarning">
+      ${alertWarning}
+    </div>
+  </div>
+
+  <div id="grid-container" class="col-sm-12">
+    <aurelia-slickgrid
+      grid-id="grid1"
+      column-definitions.bind="columnDefinitions"
+      grid-options.bind="gridOptions"
+      dataset.bind="dataset"
+      sg-on-cell-change.delegate="onCellChanged($event.detail.eventData, $event.detail.args)"
+      sg-on-click.delegate="onCellClicked($event.detail.eventData, $event.detail.args)"
+      sg-on-validation-error.delegate="onCellValidation($event.detail.eventData, $event.detail.args)"
+      asg-on-aurelia-grid-created.delegate="aureliaGridReady($event.detail)">
+    </aurelia-slickgrid>
+  </div>
+</template>
