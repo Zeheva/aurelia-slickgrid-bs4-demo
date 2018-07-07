@@ -61,12 +61,7 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
         issuer: [{ not: [{ test: /\.html$/i }] }],
         use: extractCss ? [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              // you can specify a publicPath here
-              // by default it use publicPath in webpackOptions.output
-              publicPath: '../'
-            }
+            loader: MiniCssExtractPlugin.loader
           },
           'css-loader'
         ] : ['style-loader', ...cssRules]
