@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const project = require('./aurelia_project/aurelia.json');
 const { AureliaPlugin, ModuleDependenciesPlugin } = require('aurelia-webpack-plugin');
 const { ProvidePlugin } = require('webpack');
@@ -17,7 +17,7 @@ const title = 'Aurelia Navigation Skeleton';
 const outDir = path.resolve(__dirname, project.platform.output);
 const srcDir = path.resolve(__dirname, 'src');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
-const baseUrl = '/';
+const baseUrl = '';
 
 const cssRules = [
   { loader: 'css-loader' },
@@ -59,10 +59,17 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
       {
         test: /\.css$/i,
         issuer: [{ not: [{ test: /\.html$/i }] }],
-        use: extractCss ? ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: cssRules
-        }) : ['style-loader', ...cssRules],
+        use: extractCss ? [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it use publicPath in webpackOptions.output
+              publicPath: '../'
+            }
+          },
+          'css-loader'
+        ] : ['style-loader', ...cssRules]
       },
       {
         test: /\.css$/i,
@@ -122,7 +129,7 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
       }
     }),
     new CopyWebpackPlugin([{ from: 'assets/', to: 'assets/' }]),
-    ...when(extractCss, new ExtractTextPlugin({
+    ...when(extractCss, new MiniCssExtractPlugin({
       filename: production ? '[contenthash].css' : '[id].css',
       allChunks: true
     })),

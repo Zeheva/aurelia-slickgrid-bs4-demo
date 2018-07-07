@@ -1,5 +1,5 @@
 {
-  "name": "test-aurelia-new",
+  "name": "aurelia-slickgrid-bs4-demo",
   "type": "project:application",
   "bundler": {
     "id": "webpack",
@@ -15,7 +15,7 @@
   "platform": {
     "id": "web",
     "displayName": "Web",
-    "port": 8080,
+    "port": 8081,
     "hmr": false,
     "open": false,
     "output": "dist"
