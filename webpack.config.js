@@ -27,7 +27,7 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
   resolve: {
     alias: {
       // Force all modules to use the same jquery version.
-      'jquery': path.join(__dirname, 'node_modules/jquery/src/jquery'),
+      'jquery': path.join(__dirname, 'node_modules/jquery/dist/jquery'),
       moment$: 'moment/moment.js'
     },
     extensions: ['.ts', '.js'],
