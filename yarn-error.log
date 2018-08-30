@@ -1,20 +1,17 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js start build
 
 PATH: 
-  C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Microsoft VS Code\bin;C:\Users\Ghislain\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Microsoft VS Code Insiders\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Ghislain\AppData\Roaming\npm;C:\Users\Ghislain\AppData\Local\Yarn\bin;C:\Users\Ghislain\AppData\Local\Programs\Microsoft VS Code Insiders\bin
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Microsoft VS Code Insiders\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\nodejs\;C:\Users\g_bea\AppData\Local\Microsoft\WindowsApps;C:\Users\g_bea\AppData\Local\Yarn\bin;C:\Users\g_bea\AppData\Local\Programs\Microsoft VS Code Insiders\bin;C:\Users\g_bea\AppData\Roaming\npm;C:\Users\g_bea\AppData\Local\Programs\Microsoft VS Code\bin
 
 Yarn version: 
-  1.6.0
+  1.5.1
 
 Node version: 
-  9.11.1
+  10.9.0
 
 Platform: 
   win32 x64
-
-Trace: 
-  Error: ENOENT: no such file or directory, copyfile 'C:\Users\Ghislain\AppData\Local\Yarn\Cache\v1\npm-debuglog-1.0.1-aa24ffb9ac3df9a2351837cfb2d279360cd78492\debuglog.js' -> 'C:\OwnSyncDev\GitHub\aurelia-slickgrid-bs4-demo\node_modules\debuglog\debuglog.js'
 
 npm manifest: 
   {
@@ -38,7 +35,7 @@ npm manifest:
       "aurelia-http-client": "^1.3.0",
       "aurelia-i18n": "^2.3.1",
       "aurelia-polyfills": "^1.3.0",
-      "aurelia-slickgrid": "^2.1.0",
+      "aurelia-slickgrid": "^2.3.0",
       "bluebird": "^3.5.1",
       "bootstrap": "^4.1.1",
       "bootstrap-select": "1.13.1",
@@ -46,6 +43,7 @@ npm manifest:
       "font-awesome": "^4.7.0",
       "i18next-xhr-backend": "^1.5.1",
       "jquery": "^3.3.1",
+      "lodash": "^4.17.10",
       "moment": "^2.22.2",
       "popper.js": "^1.14.3"
     },
@@ -61,7 +59,7 @@ npm manifest:
       "aurelia-protractor-plugin": "^1.0.6",
       "aurelia-testing": "^1.0.0-beta.4.0.0",
       "aurelia-tools": "^2.0.0",
-      "aurelia-webpack-plugin": "^3.0.0-rc.1",
+      "aurelia-webpack-plugin": "^3.0.0",
       "copy-webpack-plugin": "^4.5.2",
       "css-loader": "^1.0.0",
       "del": "^3.0.0",
@@ -1027,21 +1025,22 @@ Lockfile:
       aurelia-path "^1.0.0"
       aurelia-route-recognizer "^1.0.0"
   
-  aurelia-slickgrid@^2.1.0:
-    version "2.2.0"
-    resolved "https://registry.yarnpkg.com/aurelia-slickgrid/-/aurelia-slickgrid-2.2.0.tgz#2363dc77c1b1213b7c2efc6338ab88405524504f"
+  aurelia-slickgrid@^2.3.0:
+    version "2.3.0"
+    resolved "https://registry.yarnpkg.com/aurelia-slickgrid/-/aurelia-slickgrid-2.3.0.tgz#7df0ed069d63e698b8ce09b4fc6ae1d1fa68f63b"
     dependencies:
       aurelia-event-aggregator ">=1.0.1"
       aurelia-framework ">=1.1.0"
       aurelia-i18n ">=2.1.0"
       aurelia-pal ">=1.4.0"
+      dompurify "^1.0.7"
       flatpickr ">=4.2.4"
       i18next-xhr-backend ">=1.5.0"
       jquery ">=3.2.1"
       jquery-ui-dist "^1.12.1"
+      lodash.isequal "^4.5.0"
       moment ">=2.18.1"
       moment-mini ">=2.18.1"
-      sanitize-html "^1.18.4"
       slickgrid "~2.3.21"
       text-encoding-utf-8 "^1.0.2"
   
@@ -1116,7 +1115,7 @@ Lockfile:
       breeze-dag "^0.1.0"
       through2 "^2.0.0"
   
-  aurelia-webpack-plugin@^3.0.0-rc.1:
+  aurelia-webpack-plugin@^3.0.0:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/aurelia-webpack-plugin/-/aurelia-webpack-plugin-3.0.0.tgz#3c8c524587e6e6474798ff637436f80562680923"
     dependencies:
@@ -2652,7 +2651,7 @@ Lockfile:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
   
-  domelementtype@1, domelementtype@^1.3.0:
+  domelementtype@1:
     version "1.3.0"
     resolved "https://registry.yarnpkg.com/domelementtype/-/domelementtype-1.3.0.tgz#b17aed82e8ab59e52dd9c19b1756e0fc187204c2"
   
@@ -2672,11 +2671,9 @@ Lockfile:
     dependencies:
       domelementtype "1"
   
-  domhandler@^2.3.0:
-    version "2.4.2"
-    resolved "https://registry.yarnpkg.com/domhandler/-/domhandler-2.4.2.tgz#8805097e933d65e85546f726d60f5eb88b44f803"
-    dependencies:
-      domelementtype "1"
+  dompurify@^1.0.7:
+    version "1.0.7"
+    resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-1.0.7.tgz#33e5c4a5fc84df93b58ca162d1d3f28537aa3ec2"
   
   domutils@1.1:
     version "1.1.6"
@@ -2687,13 +2684,6 @@ Lockfile:
   domutils@1.5.1:
     version "1.5.1"
     resolved "https://registry.yarnpkg.com/domutils/-/domutils-1.5.1.tgz#dcd8488a26f563d61079e48c9f7b7e32373682cf"
-    dependencies:
-      dom-serializer "0"
-      domelementtype "1"
-  
-  domutils@^1.5.1:
-    version "1.7.0"
-    resolved "https://registry.yarnpkg.com/domutils/-/domutils-1.7.0.tgz#56ea341e834e06e6748af7a1cb25da67ea9f8c2a"
     dependencies:
       dom-serializer "0"
       domelementtype "1"
@@ -2796,7 +2786,7 @@ Lockfile:
       memory-fs "^0.4.0"
       tapable "^1.0.0"
   
-  entities@^1.1.1, entities@~1.1.1:
+  entities@~1.1.1:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
   
@@ -4016,17 +4006,6 @@ Lockfile:
       tapable "^1.0.0"
       toposort "^1.0.0"
       util.promisify "1.0.0"
-  
-  htmlparser2@^3.9.0:
-    version "3.9.2"
-    resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-3.9.2.tgz#1bdf87acca0f3f9e53fa4fcceb0f4b4cbb00b338"
-    dependencies:
-      domelementtype "^1.3.0"
-      domhandler "^2.3.0"
-      domutils "^1.5.1"
-      entities "^1.1.1"
-      inherits "^2.0.1"
-      readable-stream "^2.0.2"
   
   htmlparser2@~3.3.0:
     version "3.3.0"
@@ -5541,7 +5520,7 @@ Lockfile:
     version "4.3.0"
     resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   
-  lodash.clonedeep@^4.3.2, lodash.clonedeep@^4.5.0, lodash.clonedeep@~4.5.0:
+  lodash.clonedeep@^4.3.2, lodash.clonedeep@~4.5.0:
     version "4.5.0"
     resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   
@@ -5555,10 +5534,6 @@ Lockfile:
     dependencies:
       lodash._root "^3.0.0"
   
-  lodash.escaperegexp@^4.1.2:
-    version "4.1.2"
-    resolved "https://registry.yarnpkg.com/lodash.escaperegexp/-/lodash.escaperegexp-4.1.2.tgz#64762c48618082518ac3df4ccf5d5886dae20347"
-  
   lodash.isarguments@^3.0.0:
     version "3.1.0"
     resolved "https://registry.yarnpkg.com/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
@@ -5567,13 +5542,9 @@ Lockfile:
     version "3.0.4"
     resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
   
-  lodash.isplainobject@^4.0.6:
-    version "4.0.6"
-    resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
-  
-  lodash.isstring@^4.0.1:
-    version "4.0.1"
-    resolved "https://registry.yarnpkg.com/lodash.isstring/-/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
+  lodash.isequal@^4.5.0:
+    version "4.5.0"
+    resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
   
   lodash.keys@^3.0.0:
     version "3.1.2"
@@ -7158,7 +7129,7 @@ Lockfile:
     version "3.3.0"
     resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
   
-  postcss@^6.0.1, postcss@^6.0.14, postcss@^6.0.23:
+  postcss@^6.0.1, postcss@^6.0.23:
     version "6.0.23"
     resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
     dependencies:
@@ -7974,21 +7945,6 @@ Lockfile:
     optionalDependencies:
       fsevents "^1.2.3"
   
-  sanitize-html@^1.18.4:
-    version "1.18.4"
-    resolved "https://registry.yarnpkg.com/sanitize-html/-/sanitize-html-1.18.4.tgz#ffdeea13b555dd5e872e9a68b79e5e716cd8c543"
-    dependencies:
-      chalk "^2.3.0"
-      htmlparser2 "^3.9.0"
-      lodash.clonedeep "^4.5.0"
-      lodash.escaperegexp "^4.1.2"
-      lodash.isplainobject "^4.0.6"
-      lodash.isstring "^4.0.1"
-      lodash.mergewith "^4.6.0"
-      postcss "^6.0.14"
-      srcset "^1.0.0"
-      xtend "^4.0.0"
-  
   sass-graph@^2.2.4:
     version "2.2.4"
     resolved "https://registry.yarnpkg.com/sass-graph/-/sass-graph-2.2.4.tgz#13fbd63cd1caf0908b9fd93476ad43a51d1e0b49"
@@ -8445,13 +8401,6 @@ Lockfile:
   sprintf-js@~1.0.2:
     version "1.0.3"
     resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
-  
-  srcset@^1.0.0:
-    version "1.0.0"
-    resolved "https://registry.yarnpkg.com/srcset/-/srcset-1.0.0.tgz#a5669de12b42f3b1d5e83ed03c71046fc48f41ef"
-    dependencies:
-      array-uniq "^1.0.2"
-      number-is-nan "^1.0.0"
   
   sshpk@^1.7.0:
     version "1.14.2"
@@ -9794,3 +9743,18 @@ Lockfile:
   yn@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/yn/-/yn-2.0.0.tgz#e5adabc8acf408f6385fc76495684c88e6af689a"
+
+Trace: 
+  Error: Command failed.
+  Exit code: 2
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c nps build
+  Directory: D:\OwnSyncDev\GitHub\aurelia-slickgrid-bs4-demo
+  Output:
+  
+      at ProcessTermError.MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Program Files (x86)\Yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:30281:17)
+      at ChildProcess.emit (events.js:182:13)
+      at maybeClose (internal/child_process.js:961:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:250:5)
