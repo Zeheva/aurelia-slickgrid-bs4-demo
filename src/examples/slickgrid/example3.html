@@ -2,7 +2,7 @@
   <h2>${title}</h2>
   <div class="subtitle" innerhtml.bind="subTitle"></div>
 
-  <div class="col-sm-4">
+  <div class="col-sm-6">
     <label>autoEdit setting</label>
     <br/>
     <span id="radioAutoEdit">
@@ -24,9 +24,17 @@
       </span>
       <strong>Locale</strong>: ${selectedLanguage + '.json'}
     </span>
+    <div class="row" style="margin-top: 5px">
+      <button class="btn btn-outline-secondary btn-sm" click.delegate="aureliaGrid.filterService.clearFilters()">Clear Filters</button>
+      <button class="btn btn-outline-secondary btn-sm" click.delegate="aureliaGrid.sortService.clearSorting()">Clear Sorting</button>
+      <button class="btn btn-outline-info btn-sm btn-info" click.delegate="addItem()" title="Clear Filters &amp; Sorting to see it better">
+        Add item
+      </button>
+      <button class="btn btn-outline-danger btn-sm" click.delegate="deleteItem()">Delete item</button>
+    </div>
   </div>
 
-  <div class="col-sm-8">
+  <div class="col-sm-6">
     <div class="alert alert-info" show.bind="updatedObject">
       <strong>Updated Item:</strong> ${updatedObject | stringify}
     </div>
