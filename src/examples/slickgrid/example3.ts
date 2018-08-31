@@ -20,7 +20,7 @@ import { CustomInputEditor } from './custom-inputEditor';
 declare var Slick: any;
 
 const NB_ITEMS = 100;
-const URL_SAMPLE_COLLECTION_DATA = 'src/examples/slickgrid/sample-data/collection_100_numbers.json';
+const URL_SAMPLE_COLLECTION_DATA = 'assets/data/collection_100_numbers.json';
 
 // you can create custom validator to pass to an inline editor
 const myCustomTitleValidator: EditorValidator = (value) => {
