@@ -5,14 +5,15 @@ import { I18N } from 'aurelia-i18n';
 import {
   AureliaGridInstance,
   Column,
-  EditorValidator,
   Editors,
+  EditorArgs,
+  EditorValidator,
   FieldType,
   Filters,
   Formatters,
   GridOption,
   OnEventArgs,
-  OperatorType
+  OperatorType,
 } from 'aurelia-slickgrid';
 import { CustomInputEditor } from './custom-inputEditor';
 
@@ -23,14 +24,35 @@ const NB_ITEMS = 100;
 const URL_SAMPLE_COLLECTION_DATA = 'assets/data/collection_100_numbers.json';
 
 // you can create custom validator to pass to an inline editor
-const myCustomTitleValidator: EditorValidator = (value) => {
+const myCustomTitleValidator: EditorValidator = (value: any, args: EditorArgs) => {
+  // you can get the Editor Args which can be helpful, e.g. we can get the Translate Service from it
+  const grid = args && args.grid;
+  const gridOptions = (grid && grid.getOptions) ? grid.getOptions() : {};
+  const i18n = gridOptions.i18n;
+
+  // to get the editor object, you'll need to use "internalColumnEditor"
+  // don't use "editor" property since that one is what SlickGrid uses internally by it's editor factory
+  // const columnEditor = args && args.column && args.column.internalColumnEditor;
+
   if (value == null || value === undefined || !value.length) {
     return { valid: false, msg: 'This is a required field' };
   } else if (!/^Task\s\d+$/.test(value)) {
     return { valid: false, msg: 'Your title is invalid, it must start with "Task" followed by a number' };
+    // OR use the Translate Service with your custom message
+    // return { valid: false, msg: i18n.tr('YOUR_ERROR', { x: value }) };
   } else {
     return { valid: true, msg: '' };
   }
+};
+
+// create a custom Formatter to show the Task + value
+const taskFormatter = (row, cell, value, columnDef, dataContext) => {
+  if (value && Array.isArray(value)) {
+    const taskValues = value.map((val) => `Task ${val}`);
+    const values = taskValues.join(', ');
+    return `<span title="${values}">${values}</span>`;
+  }
+  return '';
 };
 
 @autoinject()
@@ -238,6 +260,7 @@ export class Example3 {
       name: 'Prerequisites',
       field: 'prerequisites',
       filterable: true,
+      formatter: taskFormatter,
       minWidth: 100,
       sortable: true,
       type: FieldType.string,
@@ -271,8 +294,7 @@ export class Example3 {
           labelPrefix: 'prefix',
         },
         collectionOptions: {
-          separatorBetweenTextLabels: '',
-          includePrefixSuffixToSelectedValues: true
+          separatorBetweenTextLabels: ' '
         },
         model: Editors.multipleSelect,
       },
@@ -300,6 +322,7 @@ export class Example3 {
 
     this.gridOptions = {
       autoEdit: this.isAutoEdit,
+      autoCommitEdit: false,
       autoResize: {
         containerId: 'demo-container',
         sidePadding: 15
@@ -385,7 +408,7 @@ export class Example3 {
         start: new Date(randomYear, randomMonth, randomDay),
         finish: new Date(randomYear, (randomMonth + 1), randomDay),
         effortDriven: (i % 5 === 0),
-        prerequisites: (i % 2 === 0) && i !== 0 && i < 12 ? [`Task ${i}`, `Task ${i - 1}`] : []
+        prerequisites: (i % 2 === 0) && i !== 0 && i < 12 ? [i, i - 1] : []
       });
     }
     return tempDataset;
@@ -418,6 +441,14 @@ export class Example3 {
 
   onCellValidation(e, args) {
     alert(args.validationResults.msg);
+  }
+
+  changeAutoCommit() {
+    this.gridOptions.autoCommitEdit = !this.gridOptions.autoCommitEdit;
+    this.gridObj.setOptions({
+      autoCommitEdit: this.gridOptions.autoCommitEdit
+    });
+    return true;
   }
 
   setAutoEdit(isAutoEdit) {
