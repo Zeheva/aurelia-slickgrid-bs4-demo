@@ -824,9 +824,9 @@ aurelia-router@^1.5.0:
     aurelia-path "^1.0.0"
     aurelia-route-recognizer "^1.0.0"
 
-aurelia-slickgrid@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/aurelia-slickgrid/-/aurelia-slickgrid-2.4.0.tgz#5b293441ec25506ad70d6db4ea5a68e7ace8cd7c"
+aurelia-slickgrid@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/aurelia-slickgrid/-/aurelia-slickgrid-2.5.0.tgz#cb4cc06375d7157bde5316975468701f508a8108"
   dependencies:
     aurelia-event-aggregator ">=1.0.1"
     aurelia-framework ">=1.1.0"
