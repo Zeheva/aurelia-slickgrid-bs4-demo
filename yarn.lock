@@ -824,9 +824,10 @@ aurelia-router@^1.5.0:
     aurelia-path "^1.0.0"
     aurelia-route-recognizer "^1.0.0"
 
-aurelia-slickgrid@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/aurelia-slickgrid/-/aurelia-slickgrid-2.5.0.tgz#cb4cc06375d7157bde5316975468701f508a8108"
+aurelia-slickgrid@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/aurelia-slickgrid/-/aurelia-slickgrid-2.6.0.tgz#4a75a1e3b3286c6e4f3f73c495dfb448da672d50"
+  integrity sha512-jhILke5iKS0v9/4QP+dZGfHnZzb+AuWmTJ3p+aO32Ts/ypXK9+RMXCo13xwwqEwygrUIDjK3VJ3OlfaNIFcH/Q==
   dependencies:
     aurelia-event-aggregator ">=1.0.1"
     aurelia-framework ">=1.1.0"
@@ -840,7 +841,7 @@ aurelia-slickgrid@^2.5.0:
     lodash.isequal "^4.5.0"
     moment ">=2.18.1"
     moment-mini ">=2.18.1"
-    slickgrid "~2.3.21"
+    slickgrid "github:6pac/SlickGrid"
     text-encoding-utf-8 "^1.0.2"
 
 aurelia-task-queue@^1.0.0, aurelia-task-queue@^1.1.0:
@@ -6899,9 +6900,9 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
 
-slickgrid@~2.3.21:
-  version "2.3.21"
-  resolved "https://registry.yarnpkg.com/slickgrid/-/slickgrid-2.3.21.tgz#5e62d92524bc7ae5ea3fb936a2a6121001f592b0"
+"slickgrid@github:6pac/SlickGrid":
+  version "2.3.23"
+  resolved "https://codeload.github.com/6pac/SlickGrid/tar.gz/d193f8a860aa23796aee53d84da4c5ee9c991bfd"
   dependencies:
     jquery ">=1.8.0"
     jquery-ui ">=1.8.0"
